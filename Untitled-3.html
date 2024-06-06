@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перемендер C#-де</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .task {
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #757F9A;
+        }
+        p {
+            color: #666;
+        }
+        .input-area {
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: block;
+            width: 150px;
+            padding: 10px;
+            background-color: #757F9A;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .feedback {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Перемендер C#-де</h1>
+
+        <div class="task">
+            <h2>Тапсырма 1: Айнымалыны құру және мәнін шығару</h2>
+            <p><code>num</code> айнымалысын жасаңыз және оған 10 мәнін қойыңыз. Содан кейін осы мәнді экранға шығарыңыз.</p>
+            <textarea id="task1" class="input-area" rows="4" placeholder="Кодыңызды осында енгізіңіз"></textarea>
+            <button class="button" onclick="checkAnswer('task1', 'int num = 10;\nConsole.WriteLine(num);')">Тексеру</button>
+            <div id="task1Feedback" class="feedback"></div>
+        </div>
+
+        <div class="task">
+            <h2>Тапсырма 2: Айнымалының мәнін өзгерту</h2>
+            <p><code>count</code> айнымалысын жасаңыз және оған 5 мәнін қойыңыз. Содан кейін <code>count</code> айнымалысын 7-ге өзгертіңіз және жаңа мәнін экранға шығарыңыз.</p>
+            <textarea id="task2" class="input-area" rows="4" placeholder="Кодыңызды осында енгізіңіз"></textarea>
+            <button class="button" onclick="checkAnswer('task2', 'int count = 5;\ncount = 7;\nConsole.WriteLine(count);')">Тексеру</button>
+            <div id="task2Feedback" class="feedback"></div>
+        </div>
+
+        <!-- Тапсырма 3: Арыфметикалық операциялар -->
+        <div class="task">
+            <h2>Тапсырма 3: Арыфметикалық операциялар</h2>
+            <p>Екі айнымалы <code>a</code> және <code>b</code> өзгермендерін 8 және 3 мәнілеріне орнатыңыз. Олардың қосынуын, айырылысын, көбейтуін және бөлінуін есептеңіз және нәтижелерді экранға шығарыңыз.</p>
+            <textarea id="task3" class="input-area" rows="4" placeholder="Кодыңызды осында енгізіңіз"></textarea>
+            <button class="button" onclick="checkAnswer('task3', 'int a = 8;\nint b = 3;\nint өзгермен = a + b;\nint айырылым = a - b;\nint көбейту = a * b;\nint бөлу = a / b;\nConsole.WriteLine(\"Қосыну: \" + өзгермен);\nConsole.WriteLine(\"Айырылым: \" + айырылым);\nConsole.WriteLine(\"Көбейту: \" + көбейту);\nConsole.WriteLine(\"Бөліну: \" + бөлу);')">Тексеру</button>
+            <div id="task3Feedback" class="feedback"></div>
+        </div>
+
+        <!-- Тапсырма 4: Строка айнымалысы -->
+        <div class="task">
+            <h2>Тапсырма 4: Строка айнымалысы</h2>
+            <p>Атыңызды <code>name</code> айнымалыңызға сақтаңыз және содан кейін осы айнымалды экранға шығарыңыз. Сонан кейін осында қол жетімді көрсеткі сөзді енгізгіңіз.</p>
+            <textarea id="task4" class="input-area" rows="4" placeholder="Кодыңызды осында енгізіңіз"></textarea>
+            <button class="button" onclick="checkAnswer('task4', 'string name = "Сіздің атыңыз";\nConsole.WriteLine("Сәлеметсіз бе, " + name + "!");')">Тексеру</button>
+            <div id="task4Feedback" class="feedback"></div>
+            </div>
+                <!-- Тапсырма 5: Маңызды операциялар -->
+    <div class="task">
+        <h2>Тапсырма 5: Маңызды операциялар</h2>
+        <p>Екі айнымалы <code>x</code> және <code>y</code> айнымалдарын жасаңыз және олардың мәндерін 10 және 20 мәндеріне орнатыңыз. Содан кейін <code>x</code> айнымалысы <code>y</code> айнымалысынан үлкен болып болмадығын тексеру условиясын жасаңыз және нәтижесін экранға шығарыңыз.</p>
+        <textarea id="task5" class="input-area" rows="4" placeholder="Кодыңызды осында енгізіңіз"></textarea>
+        <button class="button" onclick="checkAnswer('task5', 'int x = 10;\nint y = 20;\nbool isXGreaterThanY = x > y;\nConsole.WriteLine(\"X көбі Y: \" + isXGreaterThanY);')">Тексеру</button>
+        <div id="task5Feedback" class="feedback"></div>
+    </div>
+</div>
+
+<script>
+    function checkAnswer(id, correctAnswer) {
+        var userAnswer = document.getElementById(id).value.trim();
+        if (userAnswer === correctAnswer) {
+            document.getElementById(id + 'Feedback').innerHTML = "Дұрыс!";
+        } else {
+            document.getElementById(id + 'Feedback').innerHTML = "Қате. Қайталап көріңіз.";
+        }
+    }
+</script>
+</body>
+</html>
